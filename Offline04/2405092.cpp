@@ -86,6 +86,7 @@ public:
                 }
             }
         }
+        
         if(!F){
             cout << "none";
         }

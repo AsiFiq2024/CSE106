@@ -20,7 +20,7 @@ public:
     void addEdge(int u, int v)
     {
         l[u].push_back(v);
-        l[v].push_back(u);
+        //l[v].push_back(u);
     }
     
     void bfs()
@@ -141,18 +141,22 @@ public:
         }
         cout << "No" << endl;
     }
+
+
 };
 
 int main()
 {
-    Graph g(6);
+    int n;
+    cin >> n;
+    
+    Graph g(n+1);
 
-    g.addEdge(0, 1);
-    g.addEdge(0, 2);
-    g.addEdge(1, 4);
-    g.addEdge(3, 2);
-    g.addEdge(3, 4);
-    g.addEdge(3, 5);
+    for(int i = 0; i < n; i++){
+        int u,v;
+        cin >> u >> v;
+        g.addEdge(u,v);
+    }
 
     cout << "BFS: ";
     g.bfs();
